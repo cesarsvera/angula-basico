@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { NumberValueAccessor } from '@angular/forms';
+
+interface Personaje{
+  nombre: string;
+  poder: number;
+}
+
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +14,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent {
 
-agregar( ){
-  
-  console.log("esta es una prueba");
+nuevo: Personaje = {
+  nombre: 'Trunks',
+  poder: 14000
+
 }
 
+agregar( ){
+  
+  console.log(this.nuevo);
+}
+
+// cambiarNombre(event: any){
+//   console.log(event.target.value)
+// } ya no se necesita porque se utilizo el ngModel
 }

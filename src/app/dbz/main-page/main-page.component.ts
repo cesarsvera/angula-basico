@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NumberValueAccessor } from '@angular/forms';
+import { Personaje } from '../interfaces/dbz.interface';
 
-interface Personaje{
-  nombre: string;
-  poder: number;
-}
 
 
 @Component({
@@ -27,23 +24,18 @@ export class MainPageComponent {
 
   ];
 
-
-  nuevo: Personaje = {
-    nombre: '',
-    poder: 0
-
-  }
-
-  agregar(){
-    
-    if( this.nuevo.nombre.trim().length === 0 ){
-      return;
+    nuevo: Personaje ={
+      nombre: "Krilin",
+      poder: 30000
     }
-    console.log(this.nuevo);
-    this.personaje.push(this.nuevo)
-    this.nuevo = {nombre: '', poder: 0}
 
-  }
+
+    agregarNuevoPersonaje(argumento: Personaje){
+      this.personaje.push(argumento)
+    }
+
+
+  
 
   // cambiarNombre(event: any){
   //   console.log(event.target.value)

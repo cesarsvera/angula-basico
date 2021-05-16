@@ -1,1 +1,5 @@
-<p>personajes works!</p>
+<h3>Personajes</h3>
+<hr>
+<ul>
+    <li *ngFor = "let dbz of personaje" > {{dbz.nombre}} - {{dbz.poder | number}} </li>
+</ul>

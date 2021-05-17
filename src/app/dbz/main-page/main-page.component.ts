@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NumberValueAccessor } from '@angular/forms';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 
 
@@ -12,17 +13,7 @@ import { Personaje } from '../interfaces/dbz.interface';
 export class MainPageComponent {
 
 
-  personaje: Personaje[] = [
-    {
-      nombre: 'Goku',
-      poder: 100000
-    },
-    {
-      nombre: 'Vegeta',
-      poder: 999999
-    }
-
-  ];
+ 
 
     nuevo: Personaje ={
       nombre: "Krilin",
@@ -30,9 +21,17 @@ export class MainPageComponent {
     }
 
 
-    agregarNuevoPersonaje(argumento: Personaje){
-      this.personaje.push(argumento)
-    }
+    // get personaje(): Personaje[] {
+    //   return this.dbzservice.personaje;
+    // }
+
+
+    // agregarNuevoPersonaje(argumento: Personaje){
+    //   this.personaje.push(argumento);
+    // }
+
+
+    constructor( ){}
 
 
   
